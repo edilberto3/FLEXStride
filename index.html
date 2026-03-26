@@ -1,0 +1,1337 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FLEXStride — Built to Move</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Outfit:wght@200;300;400;500;600;700&family=Black+Ops+One&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div id="toast" class="toast"></div>
+
+		<!-- ═══════════════════════════════════════
+     TOP EDGE STRIP
+═══════════════════════════════════════ -->
+		<div class="edge-strip">
+			<div class="es-ticker">
+				<span>FREE DELIVERY ON ORDERS OVER &#8369;5,000</span>
+				<span class="es-sep">&#9679;</span>
+				<span>NIKE &bull; ADIDAS &bull; ASICS &bull; PUMA</span>
+				<span class="es-sep">&#9679;</span>
+				<span>BUILT TO MOVE. BUILT TO WIN.</span>
+				<span class="es-sep">&#9679;</span>
+				<span>FREE DELIVERY ON ORDERS OVER &#8369;5,000</span>
+				<span class="es-sep">&#9679;</span>
+				<span>NIKE &bull; ADIDAS &bull; ASICS &bull; PUMA</span>
+				<span class="es-sep">&#9679;</span>
+				<span>BUILT TO MOVE. BUILT TO WIN.</span>
+				<span class="es-sep">&#9679;</span>
+			</div>
+		</div>
+
+		<!-- ═══════════════════════════════════════
+     NAVBAR — glass bar, logo left, links center, icons right
+═══════════════════════════════════════ -->
+		<nav class="navbar" id="navbar">
+			<div class="nav-wrap">
+				<!-- Logo -->
+				<a class="logo" href="#" onclick="showPage('home')">
+					<span class="logo-flex">FLEX</span
+					><span class="logo-stride">STRIDE</span>
+				</a>
+
+				<!-- Center links -->
+				<ul class="nav-links" id="navLinks">
+					<li>
+						<a href="#" onclick="showPage('home')" data-page="home">Home</a>
+					</li>
+					<li>
+						<a href="#" onclick="showPage('products')" data-page="products"
+							>Shop</a
+						>
+					</li>
+					<li>
+						<a href="#" onclick="showPage('about')" data-page="about">About</a>
+					</li>
+					<li>
+						<a href="#" onclick="showPage('contact')" data-page="contact"
+							>Contact</a
+						>
+					</li>
+					<li>
+						<a href="#" onclick="showPage('team')" data-page="team">Team</a>
+					</li>
+				</ul>
+
+				<!-- Right icons -->
+				<div class="nav-icons">
+					<button class="ni-btn" onclick="openSearchOverlay()" title="Search">
+						<svg
+							width="19"
+							height="19"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<circle cx="11" cy="11" r="8" />
+							<path d="M21 21l-4.35-4.35" />
+						</svg>
+					</button>
+					<button class="ni-btn cart-btn" onclick="toggleCart()">
+						<svg
+							width="19"
+							height="19"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+							<line x1="3" y1="6" x2="21" y2="6" />
+							<path d="M16 10a4 4 0 01-8 0" />
+						</svg>
+						<span class="cart-badge" id="cartCount">0</span>
+					</button>
+					<button class="ni-btn" onclick="toggleAccountMenu()">
+						<svg
+							width="19"
+							height="19"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+						>
+							<path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+							<circle cx="12" cy="7" r="4" />
+						</svg>
+					</button>
+					<div class="acct-menu hidden" id="accountMenu">
+						<div id="accountMenuContent"></div>
+					</div>
+					<button class="ni-btn burger" onclick="toggleMobile()" id="burgerBtn">
+						<span></span><span></span><span></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Mobile Menu -->
+		<div
+			class="mob-overlay hidden"
+			id="mobOverlay"
+			onclick="toggleMobile()"
+		></div>
+		<div class="mob-panel hidden" id="mobPanel">
+			<button class="mob-close" onclick="toggleMobile()">&#x2715;</button>
+			<div class="mob-logo">FLEX<span>STRIDE</span></div>
+			<ul>
+				<li>
+					<a
+						href="#"
+						onclick="
+							toggleMobile();
+							showPage('home');
+						"
+						>Home</a
+					>
+				</li>
+				<li>
+					<a
+						href="#"
+						onclick="
+							toggleMobile();
+							showPage('products');
+						"
+						>Shop</a
+					>
+				</li>
+				<li>
+					<a
+						href="#"
+						onclick="
+							toggleMobile();
+							showPage('about');
+						"
+						>About</a
+					>
+				</li>
+				<li>
+					<a
+						href="#"
+						onclick="
+							toggleMobile();
+							showPage('contact');
+						"
+						>Contact</a
+					>
+				</li>
+				<li>
+					<a
+						href="#"
+						onclick="
+							toggleMobile();
+							showPage('team');
+						"
+						>Team</a
+					>
+				</li>
+				<li>
+					<a
+						href="#"
+						onclick="
+							toggleMobile();
+							showPage('auth');
+						"
+						>Sign In</a
+					>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Search Overlay -->
+		<div class="search-overlay hidden" id="searchOverlay">
+			<button class="so-close" onclick="closeSearchOverlay()">&#x2715;</button>
+			<div class="so-inner">
+				<label class="so-label">SEARCH FLEXSTRIDE</label>
+				<div class="so-field">
+					<input
+						type="text"
+						id="searchInput"
+						placeholder="Nike, Adidas, basketball..."
+						oninput="handleSearch(this.value)"
+						autocomplete="off"
+					/>
+				</div>
+				<div id="searchDropdown" class="so-results"></div>
+			</div>
+		</div>
+
+		<!-- Cart Sidebar -->
+		<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+		<div class="cart-sidebar" id="cartSidebar">
+			<div class="cs-head">
+				<h3>Your Bag</h3>
+				<button onclick="toggleCart()" class="cs-close">&#x2715;</button>
+			</div>
+			<div class="cs-items" id="cartItems"></div>
+			<div class="cs-foot">
+				<div class="cs-total">
+					<span>TOTAL</span><span id="cartTotal">&#8369;0</span>
+				</div>
+				<button class="btn-primary full" onclick="checkout()">
+					Checkout &rarr;
+				</button>
+			</div>
+		</div>
+
+		<!-- ═══════════════════════════════════════════════════════════
+     PAGES
+═══════════════════════════════════════════════════════════ -->
+
+		<!-- ════════════ HOME ════════════ -->
+		<div id="page-home" class="page active">
+			<!-- HERO: full-viewport diagonal split -->
+			<section class="hero-diagonal">
+				<!-- Left dark pane -->
+				<div class="hd-left">
+					<div class="hd-left-inner">
+						<span class="hd-eyebrow">&#9650; FLEXStride 2025 Collection</span>
+						<h1 class="hd-headline">
+							STEP INTO<br /><em class="hd-em">GREATNESS</em>
+						</h1>
+						<p class="hd-body">
+							Multi-brand athletic footwear for champions. Nike, Adidas, ASICS,
+							Puma — all under one roof.
+						</p>
+						<div class="hd-actions">
+							<button class="btn-primary" onclick="showPage('products')">
+								Shop Now
+							</button>
+							<button class="btn-outline-light" onclick="showPage('about')">
+								Our Story
+							</button>
+						</div>
+						<!-- brand pill row -->
+						<div class="brand-pills">
+							<span class="bp" onclick="filterAndShow('Nike')">Nike</span>
+							<span class="bp" onclick="filterAndShow('Adidas')">Adidas</span>
+							<span class="bp" onclick="filterAndShow('ASICS')">ASICS</span>
+							<span class="bp" onclick="filterAndShow('Puma')">Puma</span>
+						</div>
+					</div>
+				</div>
+				<!-- Right: hero spotlight shoe -->
+				<div class="hd-right">
+					<div class="hd-shoe-wrap">
+						<div class="hd-shoe-ring"></div>
+						<img
+							src="NikeLebron.png"
+							alt="Nike LeBron 20"
+							class="hd-shoe-img"
+							id="heroShoeImg"
+						/>
+						<div class="hd-shoe-label" id="heroShoeLabel">
+							<span class="hsl-brand">NIKE</span>
+							<span class="hsl-name">LeBron 20</span>
+							<span class="hsl-price">&#8369;11,999</span>
+						</div>
+					</div>
+					<!-- dot nav -->
+					<div class="hero-dots">
+						<button class="hdot active" onclick="setHeroShoe(0)"></button>
+						<button class="hdot" onclick="setHeroShoe(1)"></button>
+						<button class="hdot" onclick="setHeroShoe(2)"></button>
+						<button class="hdot" onclick="setHeroShoe(3)"></button>
+						<button class="hdot" onclick="setHeroShoe(4)"></button>
+					</div>
+				</div>
+				<!-- diagonal divider SVG -->
+				<div class="hd-slash">
+					<svg viewBox="0 0 100 100" preserveAspectRatio="none">
+						<polygon points="0,0 40,0 60,100 0,100" fill="var(--navy)" />
+					</svg>
+				</div>
+			</section>
+
+			<!-- SPORT CATEGORY TILES -->
+			<section class="sport-tiles-section">
+				<div class="sts-header">
+					<p class="section-eyebrow">Find Your Game</p>
+					<h2 class="section-title">SHOP BY SPORT</h2>
+				</div>
+				<div class="sport-tiles">
+					<div class="sport-tile" onclick="filterAndShow('Basketball')">
+						<div class="st-icon">&#127944;</div>
+						<div class="st-info">
+							<h3>Basketball</h3>
+							<p>Court-ready grip &amp; ankle support</p>
+						</div>
+						<span class="st-arrow">&rarr;</span>
+					</div>
+					<div class="sport-tile" onclick="filterAndShow('Golf')">
+						<div class="st-icon">&#9971;</div>
+						<div class="st-info">
+							<h3>Golf</h3>
+							<p>Stability &amp; swing performance</p>
+						</div>
+						<span class="st-arrow">&rarr;</span>
+					</div>
+					<div class="sport-tile" onclick="filterAndShow('Pickleball')">
+						<div class="st-icon">&#127955;</div>
+						<div class="st-info">
+							<h3>Pickleball</h3>
+							<p>Quick lateral durability</p>
+						</div>
+						<span class="st-arrow">&rarr;</span>
+					</div>
+					<div class="sport-tile" onclick="filterAndShow('Running')">
+						<div class="st-icon">&#127939;</div>
+						<div class="st-info">
+							<h3>Running</h3>
+							<p>Lightweight responsive cushioning</p>
+						</div>
+						<span class="st-arrow">&rarr;</span>
+					</div>
+					<div class="sport-tile" onclick="filterAndShow('Lifestyle')">
+						<div class="st-icon">&#127942;</div>
+						<div class="st-info">
+							<h3>Lifestyle</h3>
+							<p>Street-ready everyday style</p>
+						</div>
+						<span class="st-arrow">&rarr;</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- FEATURED: angled section with product cards -->
+			<section class="featured-section">
+				<div class="fs-header">
+					<div class="fsh-left">
+						<p class="section-eyebrow">Handpicked for You</p>
+						<h2 class="section-title">FEATURED KICKS</h2>
+					</div>
+					<button class="btn-outline" onclick="showPage('products')">
+						All Products &rarr;
+					</button>
+				</div>
+				<div class="feat-grid" id="featuredGrid"></div>
+			</section>
+
+			<!-- BRAND SHOWCASE ROW -->
+			<section class="brand-showcase">
+				<p
+					class="section-eyebrow"
+					style="text-align: center; margin-bottom: 24px"
+				>
+					Our Brand Partners
+				</p>
+				<div class="bs-logos">
+					<div class="bs-logo-block" onclick="filterAndShow('Nike')">
+						<span class="bsl-name">NIKE</span
+						><span class="bsl-sub">Basketball &amp; Running</span>
+					</div>
+					<div class="bs-divider"></div>
+					<div class="bs-logo-block" onclick="filterAndShow('Adidas')">
+						<span class="bsl-name">ADIDAS</span
+						><span class="bsl-sub">Golf Performance</span>
+					</div>
+					<div class="bs-divider"></div>
+					<div class="bs-logo-block" onclick="filterAndShow('ASICS')">
+						<span class="bsl-name">ASICS</span
+						><span class="bsl-sub">Court Sports</span>
+					</div>
+					<div class="bs-divider"></div>
+					<div class="bs-logo-block" onclick="filterAndShow('Puma')">
+						<span class="bsl-name">PUMA</span
+						><span class="bsl-sub">Lifestyle &amp; Street</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- REVIEWS -->
+			<section class="reviews-section">
+				<div class="rev-header">
+					<div>
+						<p class="section-eyebrow">Real Feedback</p>
+						<h2 class="section-title">WHAT PLAYERS SAY</h2>
+					</div>
+					<button class="btn-outline" onclick="openReviewModal()">
+						Write a Review
+					</button>
+				</div>
+				<div class="rev-grid" id="reviewsGrid"></div>
+			</section>
+		</div>
+		<!-- end page-home -->
+
+		<!-- ════════════ PRODUCTS ════════════ -->
+		<div id="page-products" class="page">
+			<!-- Diagonal page header -->
+			<div class="inner-hero">
+				<div class="ih-content">
+					<span class="ih-tag">02 / SHOP</span>
+					<h1>THE LINEUP</h1>
+					<p>Premium footwear from the world's best brands.</p>
+				</div>
+				<div class="ih-deco">SHOES</div>
+			</div>
+
+			<!-- Brand filter tabs (horizontal strip) -->
+			<div class="brand-filter-bar">
+				<div class="bfb-inner" id="filterTabs">
+					<button class="bfb-btn active" onclick="setFilter('All', this)">
+						All
+					</button>
+					<button class="bfb-btn" onclick="setFilter('Nike', this)">
+						Nike
+					</button>
+					<button class="bfb-btn" onclick="setFilter('Adidas', this)">
+						Adidas
+					</button>
+					<button class="bfb-btn" onclick="setFilter('ASICS', this)">
+						ASICS
+					</button>
+					<button class="bfb-btn" onclick="setFilter('Puma', this)">
+						Puma
+					</button>
+					<button class="bfb-btn" onclick="setFilter('Basketball', this)">
+						Basketball
+					</button>
+					<button class="bfb-btn" onclick="setFilter('Golf', this)">
+						Golf
+					</button>
+					<button class="bfb-btn" onclick="setFilter('Running', this)">
+						Running
+					</button>
+					<button class="bfb-btn" onclick="setFilter('Lifestyle', this)">
+						Lifestyle
+					</button>
+					<div class="bfb-sort">
+						<select id="sortSelect" onchange="applySort()">
+							<option value="default">Sort: Default</option>
+							<option value="price-asc">Price Low &rarr; High</option>
+							<option value="price-desc">Price High &rarr; Low</option>
+							<option value="name">Name A &ndash; Z</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!-- Products grid -->
+			<div class="products-wrap">
+				<div class="products-grid" id="productsGrid"></div>
+			</div>
+		</div>
+
+		<!-- Product Detail -->
+		<div id="page-product-detail" class="page">
+			<div id="productDetailContent"></div>
+		</div>
+
+		<!-- ════════════ ABOUT ════════════ -->
+		<div id="page-about" class="page">
+			<!-- Full-bleed intro with diagonal clip -->
+			<div class="about-hero">
+				<div class="abh-text">
+					<span class="ih-tag">03 / ABOUT</span>
+					<h1>BUILT TO<br /><em>MOVE</em></h1>
+					<p>
+						FLEXStride is a multi-brand shoe retailer that focuses on selling a
+						wide variety of high-quality footwear designed for athletes and
+						active individuals.
+					</p>
+				</div>
+				<div class="abh-stat-row">
+					<div class="abh-stat">
+						<span class="abhs-n">5+</span><span class="abhs-l">Top Brands</span>
+					</div>
+					<div class="abhs-div"></div>
+					<div class="abh-stat">
+						<span class="abhs-n">5</span
+						><span class="abhs-l">Sport Categories</span>
+					</div>
+					<div class="abhs-div"></div>
+					<div class="abh-stat">
+						<span class="abhs-n">PH</span
+						><span class="abhs-l">Based in Philippines</span>
+					</div>
+					<div class="abhs-div"></div>
+					<div class="abh-stat">
+						<span class="abhs-n">100%</span
+						><span class="abhs-l">Authentic Products</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Brand cards -->
+			<div class="about-brands-section">
+				<p
+					class="section-eyebrow"
+					style="text-align: center; margin-bottom: 10px"
+				>
+					What We Carry
+				</p>
+				<h2
+					class="section-title"
+					style="text-align: center; margin-bottom: 50px"
+				>
+					OUR BRAND PARTNERS
+				</h2>
+				<div class="about-brand-cards">
+					<div class="abc-card">
+						<div class="abc-icon nike-icon">N</div>
+						<h3>NIKE</h3>
+						<p>
+							Basketball &amp; Running. Performance-first engineering for the
+							serious athlete on and off the court.
+						</p>
+						<button class="btn-outline sm" onclick="filterAndShow('Nike')">
+							Shop Nike &rarr;
+						</button>
+					</div>
+					<div class="abc-card">
+						<div class="abc-icon adidas-icon">A</div>
+						<h3>ADIDAS</h3>
+						<p>
+							Golf Performance. Engineered for precision on the course —
+							stability, traction, and swing-ready design.
+						</p>
+						<button class="btn-outline sm" onclick="filterAndShow('Adidas')">
+							Shop Adidas &rarr;
+						</button>
+					</div>
+					<div class="abc-card">
+						<div class="abc-icon asics-icon">AS</div>
+						<h3>ASICS</h3>
+						<p>
+							Court Sports. Built for quick lateral movements — durable,
+							cushioned, and ready for the hardest rallies.
+						</p>
+						<button class="btn-outline sm" onclick="filterAndShow('ASICS')">
+							Shop ASICS &rarr;
+						</button>
+					</div>
+					<div class="abc-card">
+						<div class="abc-icon puma-icon">P</div>
+						<h3>PUMA</h3>
+						<p>
+							Lifestyle &amp; Street. Sporty design meets modern street fashion
+							— comfort from the gym to the sidewalk.
+						</p>
+						<button class="btn-outline sm" onclick="filterAndShow('Puma')">
+							Shop Puma &rarr;
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Values section -->
+			<div class="about-values">
+				<div class="av-inner">
+					<div class="av-text">
+						<p class="section-eyebrow">Why FLEXStride</p>
+						<h2 class="section-title">OUR PROMISE</h2>
+						<p>
+							We don't just sell shoes. We match athletes with the right
+							footwear for their sport, their style, and their ambition. Every
+							product in our lineup is selected for performance, quality, and
+							authenticity.
+						</p>
+					</div>
+					<div class="av-list">
+						<div class="av-item">
+							<span class="av-num">01</span>
+							<div>
+								<h4>100% AUTHENTIC</h4>
+								<p>
+									Every shoe is sourced directly from brand-authorized
+									distributors. Zero replicas, zero compromise.
+								</p>
+							</div>
+						</div>
+						<div class="av-item">
+							<span class="av-num">02</span>
+							<div>
+								<h4>EXPERT SELECTION</h4>
+								<p>
+									Our team curates footwear for specific sports and use cases —
+									not just what looks good on a shelf.
+								</p>
+							</div>
+						</div>
+						<div class="av-item">
+							<span class="av-num">03</span>
+							<div>
+								<h4>ATHLETE-FIRST SERVICE</h4>
+								<p>
+									From sizing advice to sport matching, we're here to help you
+									find the exact shoe your game demands.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end about -->
+
+		<!-- ════════════ CONTACT ════════════ -->
+		<div id="page-contact" class="page">
+			<!-- Asymmetric two-column layout -->
+			<div class="contact-layout">
+				<!-- Left: dark info panel -->
+				<div class="cl-left">
+					<span class="ih-tag">04 / CONTACT</span>
+					<h1>LET'S<br />TALK</h1>
+					<p class="cl-sub">
+						Have a question about sizing, stock, or a specific shoe? Reach out —
+						we run fast.
+					</p>
+
+					<div class="cl-info-list">
+						<div class="cl-info-item">
+							<span class="clii-icon">&#9993;</span>
+							<div>
+								<span class="clii-label">Email</span>
+								<span class="clii-val">hello@flexstride.ph</span>
+							</div>
+						</div>
+						<div class="cl-info-item">
+							<span class="clii-icon">&#9742;</span>
+							<div>
+								<span class="clii-label">Phone</span>
+								<span class="clii-val">+63 917 555 0101</span>
+							</div>
+						</div>
+						<div class="cl-info-item">
+							<span class="clii-icon">&#10022;</span>
+							<div>
+								<span class="clii-label">Location</span>
+								<span class="clii-val">Cebu City, Philippines</span>
+							</div>
+						</div>
+						<div class="cl-info-item">
+							<span class="clii-icon">&#9200;</span>
+							<div>
+								<span class="clii-label">Hours</span>
+								<span class="clii-val">Mon–Sat, 9AM–7PM PHT</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="cl-socials">
+						<a href="#" class="cls-link">Instagram</a>
+						<a href="#" class="cls-link">Facebook</a>
+						<a href="#" class="cls-link">TikTok</a>
+						<a href="#" class="cls-link">Shopee</a>
+					</div>
+
+					<div class="cl-deco-word">FLEX</div>
+				</div>
+
+				<!-- Right: form -->
+				<div class="cl-right">
+					<h2>SEND A MESSAGE</h2>
+					<form class="contact-form" onsubmit="submitContact(event)">
+						<div class="form-row-2">
+							<div class="form-group">
+								<label>Full Name</label
+								><input type="text" required placeholder="Your name" />
+							</div>
+							<div class="form-group">
+								<label>Email</label
+								><input type="email" required placeholder="your@email.com" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Subject</label
+							><input
+								type="text"
+								required
+								placeholder="Sizing help, order inquiry..."
+							/>
+						</div>
+						<div class="form-group">
+							<label>Message</label
+							><textarea
+								rows="6"
+								required
+								placeholder="Tell us what you need..."
+							></textarea>
+						</div>
+						<button type="submit" class="btn-primary">
+							Send Message &rarr;
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- ════════════ TEAM ════════════ -->
+		<div id="page-team" class="page">
+			<!-- Sport-themed header -->
+			<div class="team-header-band">
+				<span class="ih-tag">05 / TEAM</span>
+				<h1>THE SQUAD</h1>
+				<p>The people who keep FLEXStride moving.</p>
+			</div>
+
+			<!-- Owner: large spotlight card -->
+			<div class="owner-spotlight">
+				<div class="os-visual">
+					<div class="os-av">H</div>
+					<div class="os-sport-ring"></div>
+				</div>
+				<div class="os-content">
+					<span class="os-badge">Owner &amp; Founder</span>
+					<h2>Harold Asuncion</h2>
+					<p>
+						The driving force behind FLEXStride. Harold founded the brand with a
+						clear mission: bring authentic, premium athletic footwear to every
+						athlete in the Philippines — from the basketball court to the golf
+						course.
+					</p>
+					<div class="os-tags">
+						<span>Nike</span><span>Adidas</span><span>ASICS</span
+						><span>Puma</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Manager + Staff: horizontal sport cards -->
+			<div class="team-roster">
+				<p class="team-roster-label">Management &amp; Staff</p>
+				<div class="team-roster-grid">
+					<div class="tr-card">
+						<div class="trc-top mgr-top">
+							<div class="trc-av">J</div>
+							<span class="trc-num">02</span>
+						</div>
+						<div class="trc-body">
+							<span class="trc-role mgr-role">Manager</span>
+							<h3>Jerald Barcenas</h3>
+							<p>
+								Oversees store operations, inventory management, and brand
+								coordination. Ensures every customer leaves with exactly the
+								right shoe.
+							</p>
+							<div class="trc-skills">
+								<span>Operations</span>
+								<span>Inventory</span>
+								<span>Brand Liaison</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="tr-card">
+						<div class="trc-top staff-top">
+							<div class="trc-av">A</div>
+							<span class="trc-num">03</span>
+						</div>
+						<div class="trc-body">
+							<span class="trc-role staff-role">Staff</span>
+							<h3>Jin Anthon S. Olid</h3>
+							<p>
+								Handles customer service, product knowledge, and in-store
+								experience. A true sneakerhead who knows every shoe in the
+								lineup by heart.
+							</p>
+							<div class="trc-skills">
+								<span>Customer Service</span>
+								<span>Shoe Expert</span>
+								<span>Social Media</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="page-auth" class="page">
+			<div class="auth-page">
+				<div class="auth-visual">
+					<div class="auth-vis-content">
+						<div class="auth-logo-big">FLEX<br /><span>STRIDE</span></div>
+						<p>Built to Move. Built to Win.</p>
+					</div>
+					<div class="auth-vis-rings">
+						<div class="avr avr-1"></div>
+						<div class="avr avr-2"></div>
+						<div class="avr avr-3"></div>
+					</div>
+				</div>
+				<div class="auth-form-wrap">
+					<div class="auth-card">
+						<div class="auth-tabs">
+							<button class="auth-tab active" onclick="switchAuth('login')">
+								Sign In
+							</button>
+							<button class="auth-tab" onclick="switchAuth('register')">
+								Register
+							</button>
+						</div>
+						<div id="authLogin">
+							<h2>Welcome Back</h2>
+							<p class="auth-sub">Sign in to your FLEXStride account</p>
+							<div class="form-group">
+								<label>Email</label
+								><input
+									type="email"
+									id="loginEmail"
+									placeholder="your@email.com"
+								/>
+							</div>
+							<div class="form-group">
+								<label>Password</label
+								><input
+									type="password"
+									id="loginPass"
+									placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+								/>
+							</div>
+							<button class="btn-primary full" onclick="doLogin()">
+								Sign In
+							</button>
+							<div class="auth-hint">
+								<p>Admin: admin@flex.ph / admin123</p>
+								<p>User: user@flex.ph / user123</p>
+							</div>
+						</div>
+						<div id="authRegister" class="hidden">
+							<h2>Create Account</h2>
+							<p class="auth-sub">Join the FLEXStride community</p>
+							<div class="form-row-2">
+								<div class="form-group">
+									<label>First Name</label
+									><input type="text" id="regFirst" placeholder="Harold" />
+								</div>
+								<div class="form-group">
+									<label>Last Name</label
+									><input type="text" id="regLast" placeholder="A." />
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Email</label
+								><input
+									type="email"
+									id="regEmail"
+									placeholder="your@email.com"
+								/>
+							</div>
+							<div class="form-group">
+								<label>Password</label
+								><input
+									type="password"
+									id="regPass"
+									placeholder="Create a strong password"
+								/>
+							</div>
+							<button class="btn-primary full" onclick="doRegister()">
+								Create Account
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- USER DASHBOARD -->
+		<div id="page-dashboard" class="page">
+			<div class="inner-hero">
+				<div class="ih-content">
+					<span class="ih-tag">— / ACCOUNT</span>
+					<h1>MY ACCOUNT</h1>
+					<p id="dashWelcome">Welcome back!</p>
+				</div>
+				<div class="ih-deco">USER</div>
+			</div>
+			<div class="inner-section">
+				<div class="dashboard-grid">
+					<div class="dashboard-sidebar">
+						<nav class="dash-nav">
+							<button
+								class="dash-nav-btn active"
+								onclick="switchDash('orders')"
+							>
+								&#x1F4E6; My Orders
+							</button>
+							<button class="dash-nav-btn" onclick="switchDash('profile')">
+								&#x1F464; My Profile
+							</button>
+							<button class="dash-nav-btn" onclick="switchDash('wishlist')">
+								&#x2661; Wishlist
+							</button>
+							<button class="dash-nav-btn danger" onclick="doLogout()">
+								&#x238B; Sign Out
+							</button>
+						</nav>
+					</div>
+					<div class="dashboard-content" id="dashContent">
+						<div id="dash-orders">
+							<h3>Order History</h3>
+							<div id="ordersList"></div>
+						</div>
+						<div id="dash-profile" class="hidden">
+							<h3>My Profile</h3>
+							<div id="profileContent"></div>
+						</div>
+						<div id="dash-wishlist" class="hidden">
+							<h3>Wishlist</h3>
+							<p class="muted">Nothing saved yet.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ADMIN -->
+		<div id="page-admin" class="page">
+			<div class="admin-layout">
+				<aside class="admin-sidebar">
+					<div class="admin-brand">
+						FLEX<span style="color: var(--lime)">STRIDE</span
+						><span
+							style="
+								font-size: 10px;
+								color: var(--lime);
+								letter-spacing: 0.1em;
+								margin-left: 6px;
+							"
+							>ADMIN</span
+						>
+					</div>
+					<nav class="admin-nav">
+						<button
+							class="admin-nav-btn active"
+							onclick="switchAdmin('overview')"
+						>
+							&#x25CF; Overview
+						</button>
+						<button class="admin-nav-btn" onclick="switchAdmin('sales')">
+							&#8369; Sales
+						</button>
+						<button class="admin-nav-btn" onclick="switchAdmin('inventory')">
+							&#x229E; Inventory
+						</button>
+						<button class="admin-nav-btn" onclick="switchAdmin('orders')">
+							&#x1F4E6; Orders
+						</button>
+						<button class="admin-nav-btn" onclick="switchAdmin('suppliers')">
+							&#x26DF; Suppliers
+						</button>
+						<button class="admin-nav-btn" onclick="switchAdmin('reports')">
+							&#x1F4CA; Reports
+						</button>
+						<button class="admin-nav-btn" onclick="switchAdmin('users')">
+							&#x1F465; Users
+						</button>
+						<button class="admin-nav-btn danger" onclick="doLogout()">
+							&#x238B; Logout
+						</button>
+					</nav>
+				</aside>
+				<main class="admin-main">
+					<div id="admin-overview" class="admin-panel">
+						<h2>Dashboard Overview</h2>
+						<div class="admin-stats">
+							<div class="stat-card">
+								<p class="stat-label">Total Revenue</p>
+								<p class="stat-value">&#8369;312,450</p>
+								<p class="stat-change positive">+14.2% this month</p>
+							</div>
+							<div class="stat-card">
+								<p class="stat-label">Orders</p>
+								<p class="stat-value">156</p>
+								<p class="stat-change positive">+12 today</p>
+							</div>
+							<div class="stat-card">
+								<p class="stat-label">Products</p>
+								<p class="stat-value">5</p>
+								<p class="stat-change">Active listings</p>
+							</div>
+							<div class="stat-card">
+								<p class="stat-label">Customers</p>
+								<p class="stat-value">341</p>
+								<p class="stat-change positive">+28 this week</p>
+							</div>
+						</div>
+						<h3>Recent Orders</h3>
+						<div id="adminRecentOrders"></div>
+					</div>
+					<div id="admin-sales" class="admin-panel hidden">
+						<h2>Sales Analytics</h2>
+						<div class="sales-summary">
+							<div class="stat-card">
+								<p class="stat-label">Today</p>
+								<p class="stat-value">&#8369;23,998</p>
+							</div>
+							<div class="stat-card">
+								<p class="stat-label">This Week</p>
+								<p class="stat-value">&#8369;89,450</p>
+							</div>
+							<div class="stat-card">
+								<p class="stat-label">This Month</p>
+								<p class="stat-value">&#8369;312,450</p>
+							</div>
+							<div class="stat-card">
+								<p class="stat-label">This Year</p>
+								<p class="stat-value">&#8369;1.2M</p>
+							</div>
+						</div>
+						<h3>Sales by Product</h3>
+						<div class="sales-chart" id="salesChart"></div>
+					</div>
+					<div id="admin-inventory" class="admin-panel hidden">
+						<h2>Inventory</h2>
+						<div id="inventoryTable"></div>
+					</div>
+					<div id="admin-orders" class="admin-panel hidden">
+						<h2>All Orders</h2>
+						<div id="adminOrdersTable"></div>
+					</div>
+					<div id="admin-suppliers" class="admin-panel hidden">
+						<h2>Suppliers</h2>
+						<div id="suppliersTable"></div>
+					</div>
+					<div id="admin-reports" class="admin-panel hidden">
+						<h2>Reports</h2>
+						<div class="reports-grid">
+							<div class="report-card">
+								<h4>Monthly Revenue</h4>
+								<p>
+									&#8369;312,450 — Nike leads at &#8369;143,988 across LeBron 20
+									&amp; Pegasus 40.
+								</p>
+								<button
+									class="btn-outline sm"
+									onclick="showToast('Downloaded!')"
+								>
+									Download PDF
+								</button>
+							</div>
+							<div class="report-card">
+								<h4>Inventory Status</h4>
+								<p>
+									All 5 products in stock. Adidas Tour360 running low — reorder
+									advised.
+								</p>
+								<button
+									class="btn-outline sm"
+									onclick="showToast('Downloaded!')"
+								>
+									Download PDF
+								</button>
+							</div>
+							<div class="report-card">
+								<h4>Customer Analytics</h4>
+								<p>
+									341 customers. 72% repeat buyers. Average order &#8369;2,004.
+								</p>
+								<button
+									class="btn-outline sm"
+									onclick="showToast('Downloaded!')"
+								>
+									Download PDF
+								</button>
+							</div>
+							<div class="report-card">
+								<h4>Brand Performance</h4>
+								<p>Nike: 48% of revenue. Adidas: 26%. ASICS: 14%. Puma: 12%.</p>
+								<button
+									class="btn-outline sm"
+									onclick="showToast('Downloaded!')"
+								>
+									Download PDF
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="admin-users" class="admin-panel hidden">
+						<h2>Users</h2>
+						<div id="usersTable"></div>
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<!-- TRACKING -->
+		<div id="page-tracking" class="page">
+			<div class="inner-hero">
+				<div class="ih-content">
+					<span class="ih-tag">— / TRACK</span>
+					<h1>TRACK ORDER</h1>
+					<p>Real-time updates on your order.</p>
+				</div>
+				<div class="ih-deco">TRACK</div>
+			</div>
+			<div class="inner-section">
+				<div class="tracking-wrap">
+					<div class="form-group">
+						<label>Order ID</label>
+						<div style="display: flex; gap: 10px">
+							<input
+								type="text"
+								id="trackingInput"
+								placeholder="e.g. FS-2025-001"
+							/><button class="btn-primary" onclick="trackOrder()">
+								Track
+							</button>
+						</div>
+					</div>
+					<div id="trackingResult"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- CHECKOUT -->
+		<div id="page-checkout" class="page">
+			<div class="inner-hero">
+				<div class="ih-content">
+					<span class="ih-tag">— / CHECKOUT</span>
+					<h1>CHECKOUT</h1>
+					<p>Complete your order.</p>
+				</div>
+				<div class="ih-deco">PAY</div>
+			</div>
+			<div class="inner-section">
+				<div class="checkout-grid">
+					<div class="checkout-form">
+						<h3>Shipping Details</h3>
+						<div class="form-row-2">
+							<div class="form-group">
+								<label>First Name</label
+								><input type="text" id="co-first" placeholder="Harold" />
+							</div>
+							<div class="form-group">
+								<label>Last Name</label
+								><input type="text" id="co-last" placeholder="A." />
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Email</label
+							><input type="email" id="co-email" placeholder="your@email.com" />
+						</div>
+						<div class="form-group">
+							<label>Phone</label
+							><input
+								type="text"
+								id="co-phone"
+								placeholder="+63 9xx xxx xxxx"
+							/>
+						</div>
+						<div class="form-group">
+							<label>Address</label
+							><input
+								type="text"
+								id="co-address"
+								placeholder="Street, Barangay"
+							/>
+						</div>
+						<div class="form-row-2">
+							<div class="form-group">
+								<label>City</label
+								><input type="text" id="co-city" placeholder="Cebu City" />
+							</div>
+							<div class="form-group">
+								<label>Province</label
+								><input type="text" id="co-province" placeholder="Cebu" />
+							</div>
+						</div>
+						<h3 style="margin-top: 2rem">Payment Method</h3>
+						<div class="payment-options">
+							<label class="payment-option"
+								><input
+									type="radio"
+									name="payment"
+									value="gcash"
+									checked
+								/><span>GCash</span></label
+							>
+							<label class="payment-option"
+								><input type="radio" name="payment" value="cod" /><span
+									>Cash on Delivery</span
+								></label
+							>
+							<label class="payment-option"
+								><input type="radio" name="payment" value="card" /><span
+									>Credit / Debit Card</span
+								></label
+							>
+						</div>
+						<button
+							class="btn-primary full"
+							onclick="placeOrder()"
+							style="margin-top: 2rem"
+						>
+							Place Order &rarr;
+						</button>
+					</div>
+					<div class="checkout-summary">
+						<h3>Order Summary</h3>
+						<div id="checkoutItems"></div>
+						<div class="checkout-total">
+							<div class="ct-row">
+								<span>Subtotal</span><span id="coSubtotal">&#8369;0</span>
+							</div>
+							<div class="ct-row">
+								<span>Shipping</span><span>&#8369;200</span>
+							</div>
+							<div class="ct-row total">
+								<span>Total</span><span id="coTotal">&#8369;200</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- REVIEW MODAL -->
+		<div class="modal-overlay hidden" id="reviewModal">
+			<div class="modal">
+				<div class="modal-header">
+					<h3>Write a Review</h3>
+					<button onclick="closeReviewModal()" class="modal-close">
+						&#x2715;
+					</button>
+				</div>
+				<div class="form-group">
+					<label>Your Name</label
+					><input type="text" id="revName" placeholder="Name" />
+				</div>
+				<div class="form-group">
+					<label>Rating</label>
+					<div class="star-rating" id="starRating">
+						<span class="star" onclick="setRating(1)">&#x2605;</span>
+						<span class="star" onclick="setRating(2)">&#x2605;</span>
+						<span class="star" onclick="setRating(3)">&#x2605;</span>
+						<span class="star" onclick="setRating(4)">&#x2605;</span>
+						<span class="star" onclick="setRating(5)">&#x2605;</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Product</label>
+					<select id="revProduct">
+						<option>Nike LeBron 20</option>
+						<option>Adidas Tour360 22</option>
+						<option>ASICS Gel-Renma</option>
+						<option>Nike Air Zoom Pegasus 40</option>
+						<option>Puma RS-X</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Review</label
+					><textarea
+						id="revText"
+						rows="4"
+						placeholder="Share your experience..."
+					></textarea>
+				</div>
+				<button class="btn-primary full" onclick="submitReview()">
+					Submit Review
+				</button>
+			</div>
+		</div>
+
+		<!-- FOOTER -->
+		<footer class="footer">
+			<div class="footer-inner">
+				<div class="footer-brand">
+					<div class="footer-logo">FLEX<span>STRIDE</span></div>
+					<p class="footer-tag">BUILT TO MOVE. BUILT TO WIN.</p>
+					<p class="footer-desc">
+						Multi-brand athletic footwear for every athlete. Philippines' home
+						for Nike, Adidas, ASICS, and Puma.
+					</p>
+				</div>
+				<div class="footer-links-wrap">
+					<div class="footer-col">
+						<h4>Shop</h4>
+						<a href="#" onclick="showPage('products')">All Products</a>
+						<a href="#" onclick="filterAndShow('Nike')">Nike</a>
+						<a href="#" onclick="filterAndShow('Adidas')">Adidas</a>
+						<a href="#" onclick="filterAndShow('ASICS')">ASICS</a>
+						<a href="#" onclick="filterAndShow('Puma')">Puma</a>
+					</div>
+					<div class="footer-col">
+						<h4>Sports</h4>
+						<a href="#" onclick="filterAndShow('Basketball')">Basketball</a>
+						<a href="#" onclick="filterAndShow('Golf')">Golf</a>
+						<a href="#" onclick="filterAndShow('Pickleball')">Pickleball</a>
+						<a href="#" onclick="filterAndShow('Running')">Running</a>
+						<a href="#" onclick="filterAndShow('Lifestyle')">Lifestyle</a>
+					</div>
+					<div class="footer-col">
+						<h4>Company</h4>
+						<a href="#" onclick="showPage('about')">About Us</a>
+						<a href="#" onclick="showPage('team')">Our Team</a>
+						<a href="#" onclick="showPage('contact')">Contact</a>
+						<a href="#" onclick="showPage('tracking')">Track Order</a>
+					</div>
+					<div class="footer-col">
+						<h4>Follow</h4>
+						<a href="#">Instagram</a>
+						<a href="#">Facebook</a>
+						<a href="#">TikTok</a>
+						<a href="#">Shopee</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; 2025 FLEXStride &mdash; Cebu City, Philippines</p>
+				<p>
+					Owner: Harold Asuncion &nbsp;&middot;&nbsp; Manager: Jerald Barcenas
+					&nbsp;&middot;&nbsp; Staff: Anthon Olid
+				</p>
+			</div>
+		</footer>
+
+		<script src="app.js"></script>
+	</body>
+</html>
